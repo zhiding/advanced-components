@@ -1,0 +1,36 @@
+body {
+  padding: 70px;
+}
+
+#option_button_group {
+  margin-left: 0px;
+  margin-bottom: 10px;
+}
+
+#progress_bar {
+  width: 60%;
+}
+
+.progress-bar-nova {
+  background-color: #008B8B;
+}
+
+.progress-bar-hv {
+  background-color: #808000;
+}
+
+.progress-bar-sg {
+  background-color: #B22222;
+}
+
+.progress-bar-lv {
+  background-color: #00BFFF;
+}
+
+.progress-bar-cl {
+  background-color: #663399;
+}
+
+.progress-bar-cinder {
+  background-color: #FF6347;
+}
