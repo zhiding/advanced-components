@@ -31,3 +31,12 @@
   };
 }(jQuery);
 
+$(document).on('click', '[data-toggle="progressbar"]', function (e) {
+  var $this = $(this);
+  var $target = $($this.data('target'));
+  var value = $this.data('value');
+
+  e.preventDefault();
+
+  $target.progressbar(value);
+});

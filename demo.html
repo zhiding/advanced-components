@@ -2,6 +2,8 @@
   <head>
     <title>Demo</title>
       <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="./css/jquery-ui.min.css">
       <link rel="stylesheet" type="text/css" href="./css/site.css">
   </head>
   <body>
@@ -16,6 +18,17 @@
               <a href="#">Home</a>
             </li>
             <li>
+                <a href="#" id="components_dropdown" class="dropdown-toggle" data-hover="dropdown" data-delay="500" data-close-others="false">
+                  Components
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#"> Progress Bar </a></li>
+                  <li><a href="#"> Advanced Tab </a></li>
+                  <li><a href="#"> Autocomplete Modal </a></li>
+                </ul>
+            </li>
+            <li>
               <a href="#">About</a>
             </li>
             <li>
@@ -26,7 +39,7 @@
       </div>
     </nav>
     <div class="container">
-        <h1>Progress bar with Multicolor</h1>
+      <h1 class="page-header">multi-progress-bar</h1>
       <div id="option_button_group" class="row">
         <button data-toggle="progressbar" data-target="#nova_progress_bar" data-value="30" class="btn btn-default">Nova</button>
         <button data-toggle="progressbar" data-target="#hv_progress_bar" data-value="20" class="btn btn-default">Hypervisor Info</button>
@@ -55,20 +68,72 @@
           <span class="sr-only">0% Complete</span>
         </div>
       </div>
-  </div>
+
+      <h1 class="page-header">advanced tabs</h1>
+      <div class="row vertical-align-container">
+        <a class="btn btn-circle btn-tab-control" href="#" role="button" data-tab-control="prev">
+          <i class="fa fa-angle-double-left animated"></i>
+        </a>
+        <div class="tab-content col-md-8">
+          <div id="nova_advanced_tab" class="tab-pane fade active in" role="tabpanel">
+            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+          </div>
+          <div id="hv_advanced_tab" class="tab-pane fade" role="tabpanel">
+            <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+          </div>
+        </div>
+        <a class="btn btn-circle btn-tab-control" href="#" role="button" data-tab-control="next">
+          <i class="fa fa-angle-double-right animated"></i>
+        </a>
+      </div>
+
+      <h1 class="page-header">modal with auto-complete</h1>
+      <button class="btn btn-primary" data-toggle="modal" data-target=".modal.fade"> Add </button>
+      <div class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span> &times; </span></button>
+              <h4 class="modal-title"> Pool Name </h4>
+            </div>
+            <div class="modal-body">
+              <div id="input_autocomplete" class="input-group">
+                <span class="glyphicon glyphicon-search input-group-addon"></span>
+                <input id="auto_complete" type="text" class="form-control" placeholder="Input LB">
+              </div>
+              <span role="button" class="glyphicon glyphicon-arrow-right" style="color: green; font-size: 24px;  margin: 3px 16px;"></span>
+              <div id="add_into_list">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    Morbi leo risus
+                    <span role="button" class="glyphicon glyphicon-minus" style="color: red; position: relative; float: right;"></span>
+                  </li>
+                  <li class="list-group-item">
+                    Porta ac consectetur ac
+                    <span role="button" class="glyphicon glyphicon-minus" style="color: red; position: relative; float: right;"></span>
+                  </li>
+                  <li class="list-group-item">
+                    Vestibulum at eros
+                    <span role="button" class="glyphicon glyphicon-minus" style="color: red; position: relative; float: right;"></span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal"> Close </button>
+              <button type="button" class="btn btn-primary"> Save Changes </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap-hover-dropdown.min.js"></script>
+    <script type="text/javascript" src="./js/home-page.js"></script>
     <script type="text/javascript" src="./js/update-progress-bar.js"></script>
-    <script type="text/javascript">
-        $(document).on('click', '[data-toggle="progressbar"]', function (e) {
-          var $this = $(this);
-          var $target = $($this.data('target'));
-          var value = $this.data('value');
-
-          e.preventDefault();
-
-          $target.progressbar(value);
-        });
-    </script>
+    <script type="text/javascript" src="./js/advanced-tabs.js"></script>
+    <script type="text/javascript" src="./js/modal-with-autocomplete.js"></script>
   </body>
 </html>
