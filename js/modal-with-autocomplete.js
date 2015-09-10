@@ -25,6 +25,9 @@ $(function () {
     if (lb.trim() === "") {
       return 0;
     }
+    if ($("li.list-group-item").text().indexOf(lb) >= 0) {
+      return 0;
+    }
     $("#add_into_list>ul.list-group").prepend('<li class="list-group-item">'+lb+'<span role="button" class="glyphicon glyphicon-minus" style="color: red; position: relative; float: right;"></span></li>');
     $("input#auto_complete").val("");
   });
